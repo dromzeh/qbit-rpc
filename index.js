@@ -1,27 +1,36 @@
 import chalk from "chalk";
 import qbitapi from "qbittorrent-api-v2";
 import discord from "discord-rpc";
+import figlet from "figlet";
 
 const rpcClientID = " 1070295187479347250";
 
 const startingTimestamp = new Date();
 
-console.log(chalk.green("\nLoaded All Dependencies"));
+figlet("qbit-rpc", (err, data) => {
+    if (err) {
+        console.log(chalk.red("➤ ERROR: Something went wrong..."));
+        console.dir(err);
+        return;
+    }
+    console.log(chalk.blue(data));
+    console.log(chalk.blue("➤ ➤ ➤ https://github.com/dromzeh/qbit-rpc\n"));
+});
+
 
 import config from "./config/config.json" assert { type: "json" };
 
 if (!config.ip || !config.port || !config.username || !config.password) {
-    console.log(chalk.red(`Missing config values: ${!config.ip ? 'ip, ' : ''}${!config.port ? 'port, ' : ''}${!config.username ? 'username, ' : ''}${!config.password ? 'password' : ''}`));
+    console.log(chalk.red(`➤ ERROR: Missing config values: ${!config.ip ? 'ip, ' : ''}${!config.port ? 'port, ' : ''}${!config.username ? 'username, ' : ''}${!config.password ? 'password' : ''}`));
     process.exit(1);
 }
 
 config.updateInterval = config.updateInterval || 10; // sets default to 10 seconds if not provided
 config.showTimestamp = config.showTimestamp || true; // sets to true if not provided
 
-config.filterInactiveDL = config.filterInactiveUL || false; // sets to false if not provided
-config.filterInactiveUL = config.filterInactiveDL || false; // sets to false if not provided
-
-console.log(chalk.green("Loaded Config"));
+// sets to false if not provided
+config.filterInactiveDL = config.filterInactiveUL || false; 
+config.filterInactiveUL = config.filterInactiveDL || false;
 
 const bytesToFileSize = (bytes) => {
     const sizes = ["B", "KB", "MB", "GB", "TB"];
@@ -53,7 +62,6 @@ const discordPRC = async () => {
     let version = await api.appVersion();
 
     // console.log(speeds);
-
     if (config.filterInactiveUL) {
         torrents = torrents.filter((torrent) => torrent.state !== "pausedUP"); // removes torrents if upload is paused
     }
@@ -63,16 +71,16 @@ const discordPRC = async () => {
     }
 
     let activity = {
-        details: `${version} | ${torrents.length} torrents`,
+        details: `${version} | ${torrents.length} torrents (${averageTorrentRatio(torrents)} avg ratio)`,
         buttons: [
             {
                 label: "Get this RPC",
                 url: "https://github.com/dromzeh/qbit-rpc"
             }
         ],
-        state: `⇧ ${bytesToFileSize(speeds.up_info_speed)}/s | ⇩ ${bytesToFileSize(speeds.dl_info_speed)}/s (${averageTorrentRatio(torrents)})`,
+        state: `⇩ ${bytesToFileSize(speeds.dl_info_speed)}/s | ⇧ ${bytesToFileSize(speeds.up_info_speed)}/s`,
         largeImageKey: "logo",
-        largeImageText: `Downloaded ${bytesToFileSize(speeds.dl_info_data)} | Uploaded ${bytesToFileSize(speeds.up_info_data)}`,
+        largeImageText: `Downloaded: ${bytesToFileSize(speeds.dl_info_data)} Uploaded: ${bytesToFileSize(speeds.up_info_data)}`,
     };
 
     if (config.showTimeStamp) {
@@ -85,18 +93,18 @@ const discordPRC = async () => {
 // function runs when rpc connects successfully.
 rpc.on("connected", () => {
     discordPRC();
-    console.log(chalk.green(`Connected to discord on ${rpc.user.username}#${rpc.user.discriminator}`));
+    console.log(chalk.green(`➤ Connected to discord on ${rpc.user.username}#${rpc.user.discriminator}`));
     setInterval(() => discordPRC(), config.updateInterval * 1000); // UpdateInterval being 1 means it updates every second..
 });
 
 // basic error handling
 process.on("uncaughtException", (err) => {
-    console.log(chalk.red(err));
+    console.log(chalk.red(`➤ ERROR: ${err}`));
     process.exit(1);
 });
 
 process.on("unhandledRejection", (err) => {
-    console.log(chalk.red(err));
+    console.log(chalk.red(`➤ ERROR: ${err}`));
     process.exit(1);
 });
 
