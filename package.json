@@ -1,0 +1,19 @@
+{
+	"name": "qbit-rpc",
+	"type": "module",
+	"version": "1.0.0",
+	"description": "A simple Discord RPC for qBittorrent",
+	"main": "index.js",
+	"scripts": {
+		"start": "node index.js"
+	},
+	"dependencies": {
+		"chalk": "^5.2.0",
+		"discord-rpc": "^4.0.1",
+		"qbittorrent-api-v2": "^1.2.2"
+	},
+	"devDependencies": {
+		"chai": "^4.3.7",
+		"mocha": "^10.2.0"
+	}
+}

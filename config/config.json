@@ -1,0 +1,10 @@
+{
+    "ip": "127.0.0.1",
+    "port": 8080,
+    "username": "admin",
+    "password": "password",
+    "updateInterval": 10,
+    "showTimestamp": false,
+    "filterInactiveDL": false,
+    "filterInactiveUL": false
+}
