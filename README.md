@@ -19,7 +19,7 @@ A simple Discord Rich Presence for qBittorrent, tested on Windows & Linux.
 
 ## Installation
 
-[pnpm](https://pnpm.js.org/) and [Node.js](https://nodejs.org/) are required.
+[pnpm](https://pnpm.js.org/) and [Node.js](https://nodejs.org/) are required to run this program.
 
 Installing pnpm using npm:
 
@@ -30,8 +30,8 @@ npm i -g pnpm
 ## Usage
 
 1. Make sure you have **enabled the Web UI** in qBittorrent. **qBittorrent MUST be open before starting the Rich Presence.**
-2. You not need to modify anything but `config/config.json` to include the `ip`, `port`, `username` and `password` of your qBittorrent WebUI instance.
-3. The `filterInactiveUL` / `filterInactiveDL` value is what controls if 'inactive' torrents are shown or not. (default: false)
+2. You not need to modify anything but `config/config.json`, this is to include the `ip`, `port`, `username` and `password` of your qBittorrent WebUI instance.
+3. The `filterInactiveUL` / `filterInactiveDL` value is what controls if 'inactive' torrents are shown or not. (`default: false`)
 4. `pnpm start` to start the client ( + `pnpm i` to install dependencies if you haven't already)
 5. If you are using defaults, the RPC will automatically connect to the qBittorrent WebUI on `127.0.0.1:8080` and will update your status every 10 seconds.
 
@@ -47,4 +47,4 @@ Pull requests are welcome and appreciated.
 
 ## License
 
-Licensed under [MIT](https://mit.dromzeh.dev)
+Licensed under [MIT](https://mit.dromzeh.dev) © 2023 [dromzeh](https://dromzeh.dev)
