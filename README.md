@@ -14,7 +14,7 @@ A simple Discord Rich Presence for qBittorrent, tested on Windows & Linux.
 </p>
 
 <p align="center">
-    <img src = "https://cdn.discordapp.com/attachments/1009624960576274464/1070393490028109885/image.png" alt = "rpc example screenshot" width="380" height="105">
+    <img src = "https://cdn.discordapp.com/attachments/1009624960576274464/1071431218433892503/qbitss.png" alt = "rpc example screenshot">
 </p>
 
 ## Installation
@@ -27,19 +27,15 @@ Installing pnpm using npm:
 npm i -g pnpm
 ```
 
-There is also install scripts for pnpm and npm for Windows (ps1) and Linux (Ubuntu & Arch) - inside the `installscripts` folder.
-
-- If on linux, make sure to run `chmod +x pnpm-node-linux.sh` inside the `installscripts` directory to make the script executable.
-
-Download or clone this repository and run `pnpm install` in the directory to install the correct dependencies needed to run the client.
-
 ## Usage
 
 1. Make sure you have **enabled the Web UI** in qBittorrent. **qBittorrent MUST be open before starting the Rich Presence.**
 2. You not need to modify anything but `config/config.json` to include the `ip`, `port`, `username` and `password` of your qBittorrent WebUI instance.
 3. The `filterInactiveUL` / `filterInactiveDL` value is what controls if 'inactive' torrents are shown or not. (default: false)
-4. Run `pnpm start` to start the client, you can also use the scripts `run.sh/run.bat` (for linux, make sure to make it executable first `chmod +x run.sh`)
+4. `pnpm start` to start the client ( + `pnpm i` to install dependencies if you haven't already)
 5. If you are using defaults, the RPC will automatically connect to the qBittorrent WebUI on `127.0.0.1:8080` and will update your status every 10 seconds.
+
+* If the repository is cloned, the program will check for updates on startup.
 
 ## Issues
 

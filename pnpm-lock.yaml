@@ -4,14 +4,12 @@ specifiers:
   chai: ^4.3.7
   chalk: ^5.2.0
   discord-rpc: ^4.0.1
-  figlet: ^1.5.2
   mocha: ^10.2.0
   qbittorrent-api-v2: ^1.2.2
 
 dependencies:
   chalk: 5.2.0
   discord-rpc: 4.0.1
-  figlet: 1.5.2
   qbittorrent-api-v2: 1.2.2
 
 devDependencies:
@@ -222,11 +220,6 @@ packages:
     resolution: {integrity: sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==}
     engines: {node: '>=10'}
     dev: true
-
-  /figlet/1.5.2:
-    resolution: {integrity: sha512-WOn21V8AhyE1QqVfPIVxe3tupJacq1xGkPTB4iagT6o+P2cAgEOOwIxMftr4+ZCTI6d551ij9j61DFr0nsP2uQ==}
-    engines: {node: '>= 0.4.0'}
-    dev: false
 
   /file-uri-to-path/1.0.0:
     resolution: {integrity: sha512-0Zt+s3L7Vf1biwWZ29aARiVYLx7iMGnEUl9x33fbB/j3jR81u/O2LbqK+Bm1CDSNDKVtJ/YjwY7TUd5SkeLQLw==}
