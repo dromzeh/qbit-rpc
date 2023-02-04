@@ -22,10 +22,11 @@ const checkForUpdates = () => {
         return;
     }
 
+    // TODO: fix this when i am bothered
     exec('git log -1 HEAD --pretty=format:"%H"', (error, localCommit) => {
         exec('git log -1 origin/HEAD --pretty=format:"%H"', (error, remoteCommit) => {
-        if (localCommit.trim() === remoteCommit.trim()) {
-            console.log(chalk.green(`→ `) + chalk.dim('Already up to date!'));
+        if (localCommit.trim() === remoteCommit.trim()) { // if local commit is the same as remote commit
+            console.log(chalk.green(`→ `) + chalk.dim('Already up to date!')); 
         } else {
             const rl = readline.createInterface({
             input: process.stdin,
@@ -64,7 +65,7 @@ const checkForUpdates = () => {
 };
 
 
-const checkConfig = () => {
+const checkConfig = () => { // TODO: add warnings for config values that are optional, auto fill them with defaults if not provided.
     if (!config.ip || !config.port || !config.username || !config.password) {
         console.log(chalk.red(`→ `) +  (`Missing config values: `) + chalk.red(`${!config.ip ? 'ip, ' : ''}${!config.port ? 'port, ' : ''}${!config.username ? 'username, ' : ''}${!config.password ? 'password' : ''}`));
         process.exit(1);
@@ -127,7 +128,7 @@ const discordPRC = async () => {
         ],
         state: `⇩ ${bytesToFileSize(transferInfo.dl_info_speed)}/s | ⇧ ${bytesToFileSize(transferInfo.up_info_speed)}/s`,
         largeImageKey: "logo",
-        largeImageText: `Downloaded: ${bytesToFileSize(transferInfo.dl_info_data)} Uploaded: ${bytesToFileSize(transferInfo.up_info_data)}`,
+        largeImageText: `Downloaded: ${bytesToFileSize(transferInfo.dl_info_data)} Uploaded: ${bytesToFileSize(transferInfo.up_info_data)}`, // TODO: allow for custom text or maybe to show overall ratio, not just current session.
     };
 
     if (config.showTimeStamp) {
@@ -146,7 +147,7 @@ rpc.on("connected", () => {
 
 // basic error handling
 process.on("uncaughtException", (err) => {
-    console.log(chalk.red(`→ `) + chalk.dim('Uncaught exception: ') + chalk.red(`${err}`));
+    console.log(chalk.red(`→ `) + chalk.dim('Uncaught exception: ') + chalk.red(`${err}`)); 
     process.exit(1);
 });
 
