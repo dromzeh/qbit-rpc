@@ -4,7 +4,7 @@
     "username": "admin",
     "password": "password",
     "updateInterval": 10,
-    "showTimestamp": false,
+    "showTimestamp": true,
     "filterInactiveDL": false,
     "filterInactiveUL": false
 }

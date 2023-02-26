@@ -13,9 +13,16 @@ A simple Discord Rich Presence for qBittorrent, tested on Windows & Linux.
         <img src = "https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=white"></a>
 </p>
 
-<p align="center">
-    <img src = "https://cdn.discordapp.com/attachments/1009624960576274464/1071431218433892503/qbitss.png" alt = "rpc example screenshot">
+<p align = "center">
+    <img src = "./assets/docs/rpc-example.png" alt = "rpc example screenshot">
 </p>
+
+<details>
+  <summary>CLI Image</summary>
+<p>
+    <img src = "./assets/docs/cli-example.png" alt = "cli example screenshot" width = "500" height = "150">
+</p>
+</details>
 
 ## Installation
 
