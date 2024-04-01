@@ -46,7 +46,7 @@ npm i -g pnpm
 
 ## Issues
 
-If you have any issues, please open an issue, or contact me on Discord: `dromzeh#1337`.
+If you have any issues, please open an issue, or contact me on Discord: `@dromzeh`.
 
 ## Contributing
 
@@ -54,4 +54,4 @@ Pull requests are welcome and appreciated.
 
 ## License
 
-Licensed under [MIT](https://mit.dromzeh.dev) © 2023 [dromzeh](https://dromzeh.dev)
+Licensed under [MIT](https://mit.dromzeh.dev) © 2024 [dromzeh](https://dromzeh.dev)

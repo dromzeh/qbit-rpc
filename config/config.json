@@ -3,8 +3,10 @@
     "port": 8080,
     "username": "admin",
     "password": "password",
+    "headless": false,
     "updateInterval": 10,
     "showTimestamp": true,
+    "showGetRPC": true,
     "filterInactiveDL": false,
     "filterInactiveUL": false
 }
