@@ -20,15 +20,15 @@ npm i -g pnpm
 4. `pnpm start` to start the client ( + `pnpm i` to install dependencies if you haven't already)
 5. If you are using defaults, the RPC will automatically connect to the qBittorrent WebUI on `127.0.0.1:8080` and will update your status every 10 seconds.
 
-* If the repository is cloned, the program will check for updates on startup.
+* ~~If the repository is cloned, the program will check for updates on startup.~~
 
 ## Issues
 
-This program is barely updated but is in a working state - if you have any issues, please open an issue and contact me on Discord: `@dromzeh`.
+This program is barely updated but is in a working state - if the program is broken or you have any issues, please open an issue and contact me on Discord: `@dromzeh`.
 
 ## Contributing
 
-Pull requests are welcome and appreciated.
+Pull requests are welcome and appreciated for any changes or improvements - please open an issue for discussion before making any changes.
 
 ## License
 
